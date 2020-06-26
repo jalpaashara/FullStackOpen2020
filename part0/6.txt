@@ -1,0 +1,22 @@
+note over browser:
+text entered into form field
+then submit button pushed
+data sent as the body of the  POST request
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+
+note over server:
+the server recives the variable note 
+and adds the note and the date into the 
+notes array
+end note
+
+server-->browser: HTTP Status Code 201 & application/json
+
+note over browser:
+The event handler creates a new note
+adds it to the notes list
+rerenders the note list on the page
+end note

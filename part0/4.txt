@@ -1,0 +1,28 @@
+note over browser:
+text entered into form field
+then submit button pushed
+data sent as the body of the  POST request
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+server-->browser: HTTP Status Code 302 URL Redirect
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: Notes page Reload
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over server:
+server runs jscode that add the
+new_note to the note array returned 
+with data.json using AJAX
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{content: "HTML is easy", date: "2019-05-23T17:30:31.098Z"},…]
+
+note over browser:
+JSON data from data.json sent 
+to the url new_note to be displayed
+end note
